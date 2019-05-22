@@ -86,23 +86,21 @@
           
         </li>
 
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-book"></i> <span>Data Buku</span>
+        <li>
+        
+        <?php echo anchor('buku','<i class="fa fa-book"></i> <span>Data Buku</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
+            </span>');?>            
          
         </li>
 
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-users"></i> <span>Data Anggota</span>
+        <li>
+        
+        <?php echo anchor('anggota','<i class="fa fa-users"></i> <span>Data Anggota</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
+            </span>');?>            
          
         </li>
 
