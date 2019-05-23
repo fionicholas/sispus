@@ -19,48 +19,55 @@
           </div>
         </div>
         <div class="box-body">
-		<table class="table table-bordered">
-	<tr>
-		<th>No</th>
-		<th>Judul Buku</th>
-		<th>Penerbit</th>
-		<th>Tahun Terbit</th>
-		<th>Stok</th>
+
+				<div class="table-responsive">
+        <table class="table table-bordered" id="table-buku">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Judul</th>
+              <th>Penerbit</th>
+              <th>Tahun Terbit</th>
+              <th>Stok</th>
+              
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    <!-- Load Jquery & Datatable JS -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
+    <script>
+    var tabel = null;
+    $(document).ready(function() {
+        tabel = $('#table-buku').DataTable({
+            "processing": true,
+            "serverSide": true,
+            "ordering": true, // Set true agar bisa di sorting
+            "order": [[ 0, 'asc' ]], // Default sortingnya berdasarkan kolom / field ke 0 (paling pertama)
+            "ajax":
+            {
+                "url": "<?php echo base_url('index.php/anggota/json') ?>", // URL file untuk proses select datanya
+                "type": "POST"
+            },
+            "deferRender": true,
+            "aLengthMenu": [[5, 10, 50],[ 5, 10, 50]], // Combobox Limit
+            "columns": [
+                { "data": "buku_id" }, // Tampilkan nis
+                { "data": "judul" },  // Tampilkan nama
+                
+                { "data": "penerbit" }, // Tampilkan telepon
+                { "data": "tahun_terbit" }, // Tampilkan alamat
+                { "data": "stok" }, // Tampilkan alamat
+               
+            ],
+        });
+    });
+    </script>
 		
-		<th colspan="2">Operasi</th>
-	</tr>
-
-	<?php
-	$no=1+$this->uri->segment(3);
-foreach ($record->result() as $r) 
-
-{
-echo "<tr>
-		
-		<td>$no</td>
-		<td>$r->judul</td>
-		<td>$r->penerbit</td>
-		<td>$r->tahun_terbit</td>
-		<td>$r->stok</td>
-
-
-
-		<td width='10'>".anchor('anggota/pinjam','Pinjam Buku',array('class'=>'btn btn-success btn-sm'))."</td>
-	</tr>";
-
-	$no++;
-
-}
-?>
-</table>
-
-
-
-<?php
-
-echo $paging;
-
-?>
 	
         </div>
         <!-- /.box-body -->
