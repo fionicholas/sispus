@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 22, 2019 at 09:44 AM
+-- Generation Time: May 23, 2019 at 11:15 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.2.15
 
@@ -37,6 +37,16 @@ CREATE TABLE `anggota` (
   `password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `anggota`
+--
+
+INSERT INTO `anggota` (`anggota_id`, `nama`, `alamat`, `no_hp`, `username`, `password`) VALUES
+(2, 'Anggota 2', 'CIruas', '2312313', 'anggota21', 'c4ca4238a0b923820dcc509a6f75849b'),
+(3, 'Anggota 1', 'Cikande 1', '0839819', 'anggota1', 'c4ca4238a0b923820dcc509a6f75849b'),
+(5, 'Anggota 3', 'Serang', '7831791', 'anggota', 'c4ca4238a0b923820dcc509a6f75849b'),
+(6, 'Anggota 4', 'Serang', '983918931', 'anggota4', 'c4ca4238a0b923820dcc509a6f75849b');
+
 -- --------------------------------------------------------
 
 --
@@ -56,7 +66,8 @@ CREATE TABLE `buku` (
 --
 
 INSERT INTO `buku` (`buku_id`, `judul`, `penerbit`, `tahun_terbit`, `stok`) VALUES
-(1, 'Habis Terang Terbitlah Mendung', 'Emrizkiem', '2019', 2);
+(1, 'Habis Terang Terbitlah Mendung', 'Emrizkiem', '2019', 2),
+(2, 'Judul buku 2', 'Budi ', '2019', 10);
 
 -- --------------------------------------------------------
 
@@ -94,26 +105,6 @@ CREATE TABLE `pustakawan` (
 INSERT INTO `pustakawan` (`pustakawan_id`, `nama`, `username`, `password`) VALUES
 (1, 'Pustakawan', 'pustakawan', 'c4ca4238a0b923820dcc509a6f75849b');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `user`
---
-
-CREATE TABLE `user` (
-  `user_id` int(11) NOT NULL,
-  `nama` varchar(50) NOT NULL,
-  `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`user_id`, `nama`, `username`, `password`) VALUES
-(1, 'Admin', 'admin', '21232f297a57a5a743894a0e4a801fc3');
-
 --
 -- Indexes for dumped tables
 --
@@ -143,12 +134,6 @@ ALTER TABLE `pustakawan`
   ADD PRIMARY KEY (`pustakawan_id`);
 
 --
--- Indexes for table `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`user_id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -156,7 +141,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `anggota`
 --
 ALTER TABLE `anggota`
-  MODIFY `anggota_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `anggota_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `buku`
@@ -175,12 +160,6 @@ ALTER TABLE `peminjaman`
 --
 ALTER TABLE `pustakawan`
   MODIFY `pustakawan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `user`
---
-ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
