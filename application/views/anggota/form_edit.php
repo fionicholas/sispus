@@ -1,3 +1,10 @@
+
+    <!-- Main content -->
+    <section class="content">
+
+      <!-- Default box -->
+      <div class="box">
+        <div class="box-header with-border">
 <h3>Edit anggota </h3>
 
 <?php
@@ -35,6 +42,19 @@ echo form_open('anggota/edit');
 </tr>
 
 
+<input type="hidden" name="password" class="form-control" value ="<?php echo $record['password']?>">
+
+
 <tr><td colspan="2"><button class="btn btn-danger" type="submit" name="submit">Update</button></td></tr>
 </table>
 </form>
+
+</div>
+        <!-- /.box-body -->
+        
+      </div>
+      <!-- /.box -->
+
+    </section>
+	<!-- /.content -->
+	

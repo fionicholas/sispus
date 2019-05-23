@@ -1,4 +1,12 @@
-<h3>Data Buku</h3>
+
+    <!-- Main content -->
+    <section class="content">
+
+      <!-- Default box -->
+      <div class="box">
+        <div class="box-header with-border">
+        
+        <h3>Data Buku</h3>
 
 <?php
 echo form_open('buku/post');
@@ -36,3 +44,12 @@ echo form_open('buku/post');
 <tr><td colspan="2"><button class="btn btn-success" type="submit" name="submit">Tambah</button></td></tr>
 </table>
 </form>
+
+</div>
+        <!-- /.box-body -->
+        
+      </div>
+      <!-- /.box -->
+
+    </section>
+	<!-- /.content -->

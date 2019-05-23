@@ -1,3 +1,10 @@
+<!-- Main content -->
+<section class="content">
+
+<!-- Default box -->
+<div class="box">
+  <div class="box-header with-border">
+  
 <h3>Edit buku </h3>
 
 <?php
@@ -38,3 +45,12 @@ echo form_open('buku/edit');
 <tr><td colspan="2"><button class="btn btn-danger" type="submit" name="submit">Update</button></td></tr>
 </table>
 </form>
+
+</div>
+        <!-- /.box-body -->
+        
+      </div>
+      <!-- /.box -->
+
+    </section>
+	<!-- /.content -->

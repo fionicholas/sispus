@@ -32,6 +32,7 @@ function edit()
         'alamat' => $this->input->post('alamat'),
         'no_hp' => $this->input->post('no_hp'),
         'username' => $this->input->post('username'),
+        'password' => $this->input->post('password')
 		
 
 
@@ -54,5 +55,18 @@ function delete($id)
 	$this->db->where('anggota_id', $id); 
 	$this->db->delete('anggota');
 }
+
+function login($username, $password)
+		{
+			$chek = $this->db->get_where('anggota',array('username'=>$username,'password'=>md5($password)));
+
+			if($chek->num_rows()>0)
+			{
+				return 1;
+			}
+			else {
+				return 0;
+			}
+		}
 
 }

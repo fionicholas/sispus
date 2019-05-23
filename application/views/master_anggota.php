@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>SISPUS | Pustakawan</title>
+  <title>SISPUS | Anggota</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -54,7 +54,7 @@
       <ul class="nav navbar-nav">
      
       <li>
-      <?php echo anchor('pustakawan/logout','<i class="fa fa-sign-out"></i> <span>Logout</span>
+      <?php echo anchor('anggota/logout','<i class="fa fa-sign-out"></i> <span>Logout</span>
             ');?>    
       </li>
       </ul>
@@ -74,7 +74,8 @@
           <img src="<?php echo base_url();?>assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Pustakawan</p>
+          <p><?php foreach ($query as $r) {
+                    echo $r->nama; } ?></p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -84,7 +85,7 @@
         <li class="header">MAIN MENU</li>
         <li>
         
-        <?php echo anchor('pustakawan/home','<i class="fa fa-dashboard"></i> <span>Dasboard</span>
+        <?php echo anchor('anggota/home','<i class="fa fa-dashboard"></i> <span>Dasboard</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>');?>            
@@ -93,7 +94,7 @@
 
         <li>
         
-        <?php echo anchor('buku','<i class="fa fa-book"></i> <span>Data Buku</span>
+        <?php echo anchor('anggota/buku','<i class="fa fa-book"></i> <span>Buku</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>');?>            
@@ -102,25 +103,13 @@
 
         <li>
         
-        <?php echo anchor('anggota','<i class="fa fa-users"></i> <span>Data Anggota</span>
+        <?php echo anchor('anggota/pinjam','<i class="fa fa-users"></i> <span>Buku yang dipinjam</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>');?>            
          
         </li>
 
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-cart-plus"></i> <span>Transaksi Peminjaman</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Peminjaman</a></li>
-            <li><a href="../../index2.html"><i class="fa fa-circle-o"></i> Pengembalian</a></li>
-          </ul>
-        </li>
         
       </ul>
     </section>

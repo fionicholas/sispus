@@ -1,3 +1,11 @@
+
+    <!-- Main content -->
+    <section class="content">
+
+      <!-- Default box -->
+      <div class="box">
+        <div class="box-header with-border">
+        
 <h3>Data anggota</h3>
 
 <?php
@@ -32,7 +40,23 @@ echo form_open('anggota/post');
 </div></td>
 </tr>
 
+<tr>
+<td width="200">Password</td>
+<td><div class="col-sm-2"><input type="password" name="password" class="form-control" placeholder="Password">
+</div></td>
+</tr>
+
 
 <tr><td colspan="2"><button class="btn btn-success" type="submit" name="submit">Tambah</button></td></tr>
 </table>
 </form>
+
+</div>
+        <!-- /.box-body -->
+        
+      </div>
+      <!-- /.box -->
+
+    </section>
+	<!-- /.content -->
+	
