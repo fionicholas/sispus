@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 23, 2019 at 11:15 AM
+-- Generation Time: May 24, 2019 at 03:56 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.2.15
 
@@ -85,6 +85,15 @@ CREATE TABLE `peminjaman` (
   `status` enum('0','1') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `peminjaman`
+--
+
+INSERT INTO `peminjaman` (`peminjaman_id`, `buku_id`, `anggota_id`, `tanggal_pinjam`, `tanggal_kembali`, `denda`, `status`) VALUES
+(1, 1, 3, '2019-05-24', '2019-05-25', 0, '1'),
+(2, 1, 2, '2019-05-24', '2019-05-25', 0, '0'),
+(3, 1, 2, '2019-05-25', '2019-05-25', 0, '0');
+
 -- --------------------------------------------------------
 
 --
@@ -153,7 +162,7 @@ ALTER TABLE `buku`
 -- AUTO_INCREMENT for table `peminjaman`
 --
 ALTER TABLE `peminjaman`
-  MODIFY `peminjaman_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `peminjaman_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `pustakawan`

@@ -111,17 +111,13 @@
          
         </li>
 
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-cart-plus"></i> <span>Transaksi Peminjaman</span>
+        <li>
+        
+        <?php echo anchor('transaksi','<i class="fa fa-cart-plus"></i> <span>Transaksi Peminjaman</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Peminjaman</a></li>
-            <li><a href="../../index2.html"><i class="fa fa-circle-o"></i> Pengembalian</a></li>
-          </ul>
+            </span>');?>            
+         
         </li>
         
       </ul>
